@@ -52,7 +52,12 @@ export default {
 
 ## Custom configuration
 
-This project uses [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env). You can pass a custom configuration according to the [PostCSS Preset Env documentation](https://github.com/csstools/postcss-preset-env#options).
+This project uses [PostCSS Preset Env](https://github.com/csstools/postcss-preset-env) so you don't need to manually
+install all the different PostCSS plugins but just pass-in your desired configuration.
+Have a look at the [preset-env playground](https://preset-env.cssdb.org/playground) for testing out
+all of the available features.
+
+You can pass a custom configuration according to the [PostCSS Preset Env documentation](https://github.com/csstools/postcss-preset-env#options).
 
 Eg.
 
