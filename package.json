@@ -1,0 +1,62 @@
+{
+  "name": "docz-plugin-postcss",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "description": "Zero configuration PostCSS plugin for Docz",
+  "main": "dist/docz-plugin-postcss.js",
+  "typings": "dist/docz-plugin-postcss.d.ts",
+  "module": "dist/docz-plugin-postcss.mjs",
+  "umd:main": "dist/docz-plugin-postcss.umd.js",
+  "source": "src/docz-plugin-postcss.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md",
+    ".npmrc"
+  ],
+  "author": "Andrea Sonny <andreasonny83@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasonny83/docz-plugin-postcss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreasonny83/docz-plugin-postcss.git/issues"
+  },
+  "homepage": "https://github.com/andreasonny83/docz-plugin-postcss.git#readme",
+  "keywords": [
+    "docz",
+    "docz-plugin",
+    "postcss"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@types/node": "^10.11.1",
+    "libundler": "^1.7.6",
+    "np": "^3.0.4",
+    "prettier": "^1.14.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "docz-plugin-css": "^0.11.0",
+    "postcss-preset-env": "^6.0.7"
+  },
+  "scripts": {
+    "dev": "libundler watch --ts -e all",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p . \"src/**/*.ts\"",
+    "rename:modules": "mv dist/docz-plugin-postcss.m.js dist/docz-plugin-postcss.mjs && mv dist/docz-plugin-postcss.m.js.gz dist/docz-plugin-postcss.mjs.gz",
+    "prebuild": "npm run format",
+    "build": "libundler build --ts -e all --c && npm run rename:modules",
+    "test": "npm run lint",
+    "prerelease": "npm run lint && npm run build",
+    "release": "np"
+  }
+}
